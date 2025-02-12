@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Timeline - CodeKriti 3.0</title>
+    <link href="output.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+
+      .space-font {
+        font-family: "Space Mono", monospace;
+      }
+
+      .stars {
+        background: black;
+        background-image: radial-gradient(
+            white,
+            rgba(255, 255, 255, 0.2) 2px,
+            transparent 40px
+          ),
+          radial-gradient(
+            white,
+            rgba(255, 255, 255, 0.15) 1px,
+            transparent 30px
+          ),
+          radial-gradient(white, rgba(255, 255, 255, 0.1) 2px, transparent 40px);
+        background-size: 550px 550px, 350px 350px, 250px 250px;
+        background-position: 0 0, 40px 60px, 130px 270px;
+      }
+
+      .timeline-line {
+        background: linear-gradient(
+          to bottom,
+          transparent,
+          #60a5fa,
+          transparent
+        );
+      }
+
+      .timeline-circle {
+        box-shadow: 0 0 15px rgba(96, 165, 250, 0.5);
+      }
+
+      .date-badge {
+        position: relative;
+        z-index: 20;
+      }
+    </style>
+  </head>
+  <body class="bg-black text-white stars min-h-screen">
+    <!-- Navbar (same as before) -->
+    <nav class="fixed w-full z-50 bg-black/80 backdrop-blur-sm">
+      <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center h-16">
+          <a href="index.html" class="space-font text-2xl font-bold"
+            >CodeKriti 3.0</a
+          >
+          <div class="hidden md:flex space-x-8">
+            <a
+              href="index.html#about"
+              class="hover:text-blue-400 transition-colors"
+              >About</a
+            >
+            <a
+              href="competitions.html"
+              class="hover:text-blue-400 transition-colors"
+              >Competitions</a
+            >
+          </div>
+          <button class="md:hidden">
+            <i class="fas fa-bars text-2xl"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="hidden fixed inset-0 bg-black/95 z-40">
+      <div class="flex flex-col items-center justify-center h-full space-y-8">
+        <a href="#about" class="text-xl hover:text-blue-400 transition-colors"
+          >About</a
+        >
+        <a
+          href="competitions.html"
+          class="text-xl hover:text-blue-400 transition-colors"
+          >Competitions</a
+        >
+        <a
+          href="timeline.html"
+          class="text-xl hover:text-blue-400 transition-colors"
+          >Timeline</a
+        >
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="pt-24 pb-16 px-4">
+      <div class="container mx-auto">
+        <h1 class="space-font text-4xl md:text-5xl font-bold text-center mb-16">
+          MISSION TIMELINE
+        </h1>
+
+        <!-- Timeline -->
+        <div class="relative max-w-3xl mx-auto">
+          <!-- Vertical Line -->
+          <div
+            class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 timeline-line"
+          ></div>
+
+          <!-- Day 1 -->
+          <div class="mb-16">
+            <div class="relative flex items-center justify-center mb-8">
+              <div
+                class="absolute w-8 h-8 bg-blue-500 rounded-full left-1/2 transform -translate-x-1/2 timeline-circle z-10"
+              ></div>
+              <div
+                class="date-badge bg-black px-6 py-2 rounded-full border border-blue-400/30"
+              >
+                <h2 class="space-font text-2xl font-bold">
+                  Day 1 - February 17, 2025
+                </h2>
+              </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+              <div
+                class="bg-blue-900/20 p-6 rounded-lg backdrop-blur-sm border border-blue-400/30 hover:border-blue-400 transition-colors"
+              >
+                <h3 class="text-xl font-bold mb-4">Algorithm to Code</h3>
+                <p class="text-gray-300">09:00 AM - 11:00 AM</p>
+              </div>
+
+              <div
+                class="bg-blue-900/20 p-6 rounded-lg backdrop-blur-sm border border-blue-400/30 hover:border-blue-400 transition-colors"
+              >
+                <h3 class="text-xl font-bold mb-4">Designathon</h3>
+                <p class="text-gray-300">11:30 AM - 01:00 PM</p>
+              </div>
+
+              <div
+                class="md:col-span-2 bg-blue-900/20 p-6 rounded-lg backdrop-blur-sm border border-blue-400/30 hover:border-blue-400 transition-colors"
+              >
+                <h3 class="text-xl font-bold mb-4">Tech Maze</h3>
+                <p class="text-gray-300">02:00 PM - 05:00 PM</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Day 2 -->
+          <div>
+            <div class="relative flex items-center justify-center mb-8">
+              <div
+                class="absolute w-8 h-8 bg-blue-500 rounded-full left-1/2 transform -translate-x-1/2 timeline-circle z-10"
+              ></div>
+              <div
+                class="date-badge bg-black px-6 py-2 rounded-full border border-blue-400/30"
+              >
+                <h2 class="space-font text-2xl font-bold">
+                  Day 2 - February 18, 2025
+                </h2>
+              </div>
+            </div>
+
+            <div
+              class="bg-blue-900/20 p-6 rounded-lg backdrop-blur-sm border border-blue-400/30 hover:border-blue-400 transition-colors"
+            >
+              <h3 class="text-xl font-bold mb-4">Devxtreme Hackathon</h3>
+              <div class="space-y-2 text-gray-300">
+                <p>11:00 AM - 12:30 PM: Ideation & Planning</p>
+                <p>12:30 PM - 03:30 PM: Prototype Development</p>
+                <p>04:00 PM - 04:45 PM: Final Presentations</p>
+                <p>05:00 PM: Winners Announcement</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black/80 py-8">
+      <div class="container mx-auto px-4">
+        <div class="text-center text-gray-400">
+          <p>© 2025 CodeKriti 3.0. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle (same as before)
+      const menuButton = document.querySelector("nav button");
+      const mobileMenu = document.querySelector(".fixed.inset-0");
+
+      menuButton.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // Close mobile menu when clicking a link
+      const mobileLinks = mobileMenu.querySelectorAll("a");
+      mobileLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+        });
+      });
+    </script>
+  </body>
+</html>

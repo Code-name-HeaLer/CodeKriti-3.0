@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Competitions - CodeKriti 3.0</title>
+    <link href="./output.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+
+      .space-font {
+        font-family: "Space Mono", monospace;
+      }
+
+      .stars {
+        background: black;
+        background-image: radial-gradient(
+            white,
+            rgba(255, 255, 255, 0.2) 2px,
+            transparent 40px
+          ),
+          radial-gradient(
+            white,
+            rgba(255, 255, 255, 0.15) 1px,
+            transparent 30px
+          ),
+          radial-gradient(white, rgba(255, 255, 255, 0.1) 2px, transparent 40px);
+        background-size: 550px 550px, 350px 350px, 250px 250px;
+        background-position: 0 0, 40px 60px, 130px 270px;
+      }
+
+      .competition-card {
+        background: linear-gradient(
+          45deg,
+          rgba(0, 0, 0, 0.8),
+          rgba(25, 25, 112, 0.4)
+        );
+        backdrop-filter: blur(10px);
+        transition: transform 0.3s ease;
+      }
+
+      .competition-card:hover {
+        transform: translateY(-5px);
+      }
+    </style>
+  </head>
+  <body class="bg-black text-white stars min-h-screen">
+    <!-- Navbar (same as index.html) -->
+    <nav class="fixed w-full z-50 bg-black/80 backdrop-blur-sm">
+      <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center h-16">
+          <a href="index.html" class="space-font text-2xl font-bold"
+            >CodeKriti 3.0</a
+          >
+          <div class="hidden md:flex space-x-8">
+            <a
+              href="index.html#about"
+              class="hover:text-blue-400 transition-colors"
+              >About</a
+            >
+            <a href="#" class="text-blue-400">Competitions</a>
+            <a
+              href="timeline.html"
+              class="hover:text-blue-400 transition-colors"
+              >Timeline</a
+            >
+          </div>
+          <button class="md:hidden">
+            <i class="fas fa-bars text-2xl"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="hidden fixed inset-0 bg-black/95 z-40">
+      <div class="flex flex-col items-center justify-center h-full space-y-8">
+        <a href="#about" class="text-xl hover:text-blue-400 transition-colors"
+          >About</a
+        >
+        <a
+          href="competitions.html"
+          class="text-xl hover:text-blue-400 transition-colors"
+          >Competitions</a
+        >
+        <a
+          href="timeline.html"
+          class="text-xl hover:text-blue-400 transition-colors"
+          >Timeline</a
+        >
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="pt-24 pb-16 px-4">
+      <div class="container mx-auto">
+        <h1 class="space-font text-4xl md:text-5xl font-bold text-center mb-16">
+          MISSION OBJECTIVES
+        </h1>
+
+        <!-- Competitions Grid -->
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Algorithm to Code -->
+          <div
+            class="competition-card rounded-lg p-6 border border-blue-400/30"
+          >
+            <div class="flex items-center mb-4">
+              <i class="fas fa-code text-3xl text-blue-400 mr-4"></i>
+              <h2 class="space-font text-2xl font-bold">Algorithm to Code</h2>
+            </div>
+            <p class="text-gray-300 mb-6">
+              Embark on a solo mission to transform abstract algorithms into
+              elegant code. Like navigating through a wormhole, you'll need to
+              precisely translate theoretical concepts into practical solutions.
+              Your code will be judged on accuracy, efficiency, and adherence to
+              programming best practices.
+            </p>
+            <div class="flex flex-wrap gap-4">
+              <a
+                href="#"
+                class="px-6 py-2 bg-blue-500 hover:bg-blue-600 rounded-full transition-colors"
+              >
+                Register
+              </a>
+              <a
+                href="#"
+                class="px-6 py-2 border border-blue-400 hover:bg-blue-400/20 rounded-full transition-colors"
+              >
+                Download Brochure
+              </a>
+            </div>
+          </div>
+
+          <!-- Designathon -->
+          <div
+            class="competition-card rounded-lg p-6 border border-blue-400/30"
+          >
+            <div class="flex items-center mb-4">
+              <i class="fas fa-paint-brush text-3xl text-blue-400 mr-4"></i>
+              <h2 class="space-font text-2xl font-bold">Designathon</h2>
+            </div>
+            <p class="text-gray-300 mb-6">
+              Like crafting a new world, you'll have 1.5 hours to design a
+              complete UI/UX solution. Your mission: create an intuitive
+              interface that bridges human interaction with digital technology.
+              Use any design tool of your choice to bring your vision to life,
+              then present your creation to our expert panel.
+            </p>
+            <div class="flex flex-wrap gap-4">
+              <a
+                href="#"
+                class="px-6 py-2 bg-blue-500 hover:bg-blue-600 rounded-full transition-colors"
+              >
+                Register
+              </a>
+              <a
+                href="#"
+                class="px-6 py-2 border border-blue-400 hover:bg-blue-400/20 rounded-full transition-colors"
+              >
+                Download Brochure
+              </a>
+            </div>
+          </div>
+
+          <!-- Tech Maze -->
+          <div
+            class="competition-card rounded-lg p-6 border border-blue-400/30"
+          >
+            <div class="flex items-center mb-4">
+              <i class="fas fa-maze text-3xl text-blue-400 mr-4"></i>
+              <h2 class="space-font text-2xl font-bold">Tech Maze</h2>
+            </div>
+            <p class="text-gray-300 mb-6">
+              Navigate through three challenging dimensions as a team of three
+              explorers. From memorizing technical knowledge in Byte Bash to
+              reconstructing code in Sort the Stash, and finally proving your
+              mettle in Code Bee. Like traversing through different galaxies,
+              each round presents unique challenges that test different aspects
+              of your technical prowess.
+            </p>
+            <div class="space-y-4 mb-6">
+              <div class="bg-blue-900/30 p-4 rounded-lg">
+                <h3 class="font-bold mb-2">Mission Phases:</h3>
+                <ul class="list-disc list-inside space-y-2 text-gray-300">
+                  <li>Round 1: Byte Bash - Technical Memory Challenge</li>
+                  <li>Round 2: Sort the Stash - Code Assembly Mission</li>
+                  <li>Round 3: Code Bee - Real-time Output Analysis</li>
+                </ul>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-4">
+              <a
+                href="#"
+                class="px-6 py-2 bg-blue-500 hover:bg-blue-600 rounded-full transition-colors"
+              >
+                Register
+              </a>
+              <a
+                href="#"
+                class="px-6 py-2 border border-blue-400 hover:bg-blue-400/20 rounded-full transition-colors"
+              >
+                Download Brochure
+              </a>
+            </div>
+          </div>
+
+          <!-- Devxtreme Hackathon -->
+          <div
+            class="competition-card rounded-lg p-6 border border-blue-400/30"
+          >
+            <div class="flex items-center mb-4">
+              <i class="fas fa-rocket text-3xl text-blue-400 mr-4"></i>
+              <h2 class="space-font text-2xl font-bold">Devxtreme Hackathon</h2>
+            </div>
+            <p class="text-gray-300 mb-6">
+              The ultimate mission: a one-day expedition into innovation and
+              entrepreneurship. Like planning an interstellar journey, teams
+              will develop both technical solutions and viable business
+              strategies. Your mission culminates in a pitch to our expert
+              panel, showcasing your prototype and its potential impact.
+            </p>
+            <div class="space-y-4 mb-6">
+              <div class="bg-blue-900/30 p-4 rounded-lg">
+                <h3 class="font-bold mb-2">Mission Timeline:</h3>
+                <ul class="list-disc list-inside space-y-2 text-gray-300">
+                  <li>11:00 AM - 12:30 PM: Ideation & Planning Phase</li>
+                  <li>12:30 PM - 3:30 PM: Prototype Development</li>
+                  <li>4:00 PM - 4:45 PM: Final Pitch & Evaluation</li>
+                </ul>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-4">
+              <a
+                href="#"
+                class="px-6 py-2 bg-blue-500 hover:bg-blue-600 rounded-full transition-colors"
+              >
+                Register
+              </a>
+              <a
+                href="#"
+                class="px-6 py-2 border border-blue-400 hover:bg-blue-400/20 rounded-full transition-colors"
+              >
+                Download Brochure
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black/80 py-8">
+      <div class="container mx-auto px-4">
+        <div class="text-center text-gray-400">
+          <p>© 2025 CodeKriti 3.0. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      const menuButton = document.querySelector("nav button");
+      const mobileMenu = document.querySelector(".fixed.inset-0");
+
+      menuButton.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // Close mobile menu when clicking a link
+      const mobileLinks = mobileMenu.querySelectorAll("a");
+      mobileLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CodeKriti 3.0</title>
+    <link href="output.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+
+      .space-font {
+        font-family: "Space Mono", monospace;
+      }
+
+      .stars {
+        background: black;
+        background-image: radial-gradient(
+            white,
+            rgba(255, 255, 255, 0.2) 2px,
+            transparent 40px
+          ),
+          radial-gradient(
+            white,
+            rgba(255, 255, 255, 0.15) 1px,
+            transparent 30px
+          ),
+          radial-gradient(white, rgba(255, 255, 255, 0.1) 2px, transparent 40px);
+        background-size: 550px 550px, 350px 350px, 250px 250px;
+        background-position: 0 0, 40px 60px, 130px 270px;
+        animation: stars 8s linear infinite;
+      }
+
+      @keyframes stars {
+        0% {
+          background-position: 0 0, 40px 60px, 130px 270px;
+        }
+        100% {
+          background-position: -550px 0, -350px 60px, -250px 270px;
+        }
+      }
+
+      .gargantua {
+        background: radial-gradient(
+          circle at center,
+          rgba(0, 0, 0, 0.8) 0%,
+          rgba(0, 0, 0, 0.6) 20%,
+          rgba(25, 25, 112, 0.4) 40%,
+          rgba(70, 130, 180, 0.2) 60%,
+          transparent 80%
+        );
+      }
+    </style>
+  </head>
+  <body class="bg-black text-white overflow-x-hidden">
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 bg-black/80 backdrop-blur-sm">
+      <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center h-16">
+          <a href="#" class="space-font text-2xl font-bold">CodeKriti 3.0</a>
+          <div class="hidden md:flex space-x-8">
+            <a href="#about" class="hover:text-blue-400 transition-colors"
+              >About</a
+            >
+            <a
+              href="competitions.html"
+              class="hover:text-blue-400 transition-colors"
+              >Competitions</a
+            >
+            <a
+              href="timeline.html"
+              class="hover:text-blue-400 transition-colors"
+              >Timeline</a
+            >
+          </div>
+          <button class="md:hidden">
+            <i class="fas fa-bars text-2xl"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="hidden fixed inset-0 bg-black/95 z-40">
+      <div class="flex flex-col items-center justify-center h-full space-y-8">
+        <a href="#about" class="text-xl hover:text-blue-400 transition-colors"
+          >About</a
+        >
+        <a
+          href="competitions.html"
+          class="text-xl hover:text-blue-400 transition-colors"
+          >Competitions</a
+        >
+        <a
+          href="timeline.html"
+          class="text-xl hover:text-blue-400 transition-colors"
+          >Timeline</a
+        >
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="relative h-screen stars">
+      <div class="absolute inset-0 gargantua"></div>
+      <div
+        class="relative z-10 flex flex-col items-center justify-center h-full text-center px-4"
+      >
+        <h1 class="space-font text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
+          <span class="block">BEYOND THE</span>
+          <span class="block text-blue-400">DIGITAL HORIZON</span>
+        </h1>
+        <p class="text-lg md:text-xl max-w-2xl mb-8 text-gray-300">
+          "Do not go gentle into that good night. Rage, rage against the dying
+          of the light." Embark on a journey through space, time, and code.
+        </p>
+        <a
+          href="competitions.html"
+          class="group relative inline-flex items-center px-8 py-3 overflow-hidden border-2 border-blue-400 rounded-full hover:bg-blue-400 transition-colors duration-300"
+        >
+          <span
+            class="relative z-10 text-lg font-medium group-hover:text-white transition-colors"
+          >
+            EXPLORE NOW
+          </span>
+        </a>
+      </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gradient-to-b from-black to-gray-900">
+      <div class="container mx-auto px-4">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div class="space-y-6">
+            <h2 class="space-font text-3xl md:text-4xl font-bold">
+              TRANSCEND THE ORDINARY
+            </h2>
+            <p class="text-gray-300 text-lg">
+              Like the intrepid explorers of Interstellar who ventured beyond
+              known space, CodeKriti 3.0 invites you to push the boundaries of
+              technology and innovation.
+            </p>
+            <p class="text-gray-300 text-lg">
+              Our two-day tech extravaganza features cutting-edge competitions,
+              from algorithmic challenges to design sprints, culminating in an
+              epic hackathon that will test your limits and reward your
+              creativity.
+            </p>
+          </div>
+          <div class="relative">
+            <div
+              class="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-lg blur-2xl"
+            ></div>
+            <div
+              class="relative bg-gray-800 p-8 rounded-lg border border-gray-700"
+            >
+              <div class="grid grid-cols-2 gap-6">
+                <div class="text-center">
+                  <div class="text-4xl font-bold text-blue-400 mb-2">4+</div>
+                  <div class="text-gray-400">Events</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-4xl font-bold text-blue-400 mb-2">2</div>
+                  <div class="text-gray-400">Days</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-4xl font-bold text-blue-400 mb-2">₹50K+</div>
+                  <div class="text-gray-400">Prizes</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-4xl font-bold text-blue-400 mb-2">500+</div>
+                  <div class="text-gray-400">Participants</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-8">
+      <div class="container mx-auto px-4">
+        <div class="text-center text-gray-400">
+          <p>© 2025 CodeKriti 3.0. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      const menuButton = document.querySelector("nav button");
+      const mobileMenu = document.querySelector(".fixed.inset-0");
+
+      menuButton.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // Close mobile menu when clicking a link
+      const mobileLinks = mobileMenu.querySelectorAll("a");
+      mobileLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+        });
+      });
+    </script>
+  </body>
+</html>
