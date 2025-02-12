@@ -53,16 +53,22 @@
     <nav class="fixed w-full z-50 bg-black/80 backdrop-blur-sm">
       <div class="container mx-auto px-4">
         <div class="flex justify-between items-center h-16">
-          <a href="index.html" class="space-font text-2xl font-bold"
-            >CodeKriti 3.0</a
-          >
+          <div class="flex items-center gap-6">
+            <a href="index.html"
+              ><img src="logo.png" alt="logo" class="h-8 w-auto"
+            /></a>
+            <a href="index.html" class="space-font text-2xl font-bold"
+              >CodeKriti 3.0</a
+            >
+          </div>
           <div class="hidden md:flex space-x-8">
             <a
               href="index.html#about"
               class="hover:text-blue-400 transition-colors"
               >About</a
             >
-            <a href="#" class="text-blue-400">Competitions</a>
+            <a href="timeline.html" class="text-blue-400">Competitions</a>
+
             <a
               href="timeline.html"
               class="hover:text-blue-400 transition-colors"
@@ -79,7 +85,9 @@
     <!-- Mobile Menu -->
     <div class="hidden fixed inset-0 bg-black/95 z-40">
       <div class="flex flex-col items-center justify-center h-full space-y-8">
-        <a href="#about" class="text-xl hover:text-blue-400 transition-colors"
+        <a
+          href="index.html#about"
+          class="text-xl hover:text-blue-400 transition-colors"
           >About</a
         >
         <a
