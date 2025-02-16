@@ -16,48 +16,53 @@
         font-family: "Space Mono", monospace;
       }
 
-      .stars {
-        background: black;
-        background-image: radial-gradient(
-            white,
-            rgba(255, 255, 255, 0.2) 2px,
-            transparent 40px
-          ),
-          radial-gradient(
-            white,
-            rgba(255, 255, 255, 0.15) 1px,
-            transparent 30px
-          ),
-          radial-gradient(white, rgba(255, 255, 255, 0.1) 2px, transparent 40px);
-        background-size: 550px 550px, 350px 350px, 250px 250px;
-        background-position: 0 0, 40px 60px, 130px 270px;
-        animation: stars 10s linear infinite;
+      .video-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
+        opacity: 0.8;
       }
 
-      @keyframes stars {
-        0% {
-          background-position: 0 0, 40px 60px, 130px 270px;
-        }
-        100% {
-          background-position: -550px 0, -350px 60px, -250px 270px;
-        }
-      }
-
-      .gargantua {
-        background: radial-gradient(
-          circle at center,
-          rgba(0, 0, 0, 0.8) 0%,
-          rgba(0, 0, 0, 0.6) 20%,
-          rgba(25, 25, 112, 0.4) 40%,
-          rgba(70, 130, 180, 0.2) 60%,
-          transparent 80%
+      .video-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.8),
+          rgba(0, 0, 0, 0.6)
         );
+        z-index: 1;
+      }
+
+      .text-glow {
+        text-shadow: 0 0 10px rgba(96, 165, 250, 0.5);
+      }
+
+      .floating {
+        animation: float 6s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
       }
     </style>
   </head>
   <body class="bg-black text-white overflow-x-hidden">
     <!-- Navbar -->
-    <nav class="fixed w-full z-50 bg-black/80 backdrop-blur-sm">
+    <nav class="fixed w-full z-50 bg-transparent px-2 md:px-6">
       <div class="container mx-auto px-4">
         <div class="flex justify-between items-center h-16">
           <div class="flex items-center gap-6">
@@ -106,8 +111,16 @@
     </div>
 
     <!-- Hero Section -->
-    <div class="relative h-screen stars">
-      <div class="absolute inset-0 gargantua"></div>
+    <div class="relative h-screen">
+      <!-- Video Background -->
+      <video class="video-background" autoplay loop muted playsinline>
+        <source src="space.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      <!-- Overlay -->
+      <div class="video-overlay"></div>
+
       <div
         class="relative z-10 flex flex-col items-center justify-center h-full text-center px-4"
       >
@@ -117,7 +130,7 @@
         </h1>
         <p class="text-lg md:text-xl max-w-2xl mb-8 text-gray-300">
           Do not go gentle into that good night. Rage, rage against the dying of
-          the light." Embark on a journey through space, time, and code.
+          the light. Embark on a journey through space, time, and code.
         </p>
         <a
           href="competitions.html"
@@ -130,14 +143,28 @@
           </span>
         </a>
       </div>
+
+      <!-- Floating Elements -->
+      <div class="absolute inset-0 pointer-events-none z-20">
+        <div
+          class="floating absolute top-1/4 left-1/4 w-32 h-32 bg-blue-500/10 rounded-full blur-xl"
+        ></div>
+        <div
+          class="floating absolute bottom-1/4 right-1/4 w-40 h-40 bg-purple-500/10 rounded-full blur-xl"
+          style="animation-delay: -2s"
+        ></div>
+      </div>
     </div>
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-gradient-to-b from-black to-gray-900">
+    <section
+      id="about"
+      class="py-20 bg-gradient-to-b from-black to-blue-900/20"
+    >
       <div class="container mx-auto px-4">
-        <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
           <div class="space-y-6">
-            <h2 class="space-font text-3xl md:text-4xl font-bold">
+            <h2 class="space-font text-3xl md:text-4xl font-bold text-glow">
               TRANSCEND THE ORDINARY
             </h2>
             <p class="text-gray-300 text-lg">
@@ -151,32 +178,65 @@
               epic hackathon that will test your limits and reward your
               creativity.
             </p>
+            <div class="grid grid-cols-2 gap-6">
+              <div
+                class="text-center p-4 bg-blue-900/20 rounded-lg backdrop-blur-sm border border-blue-400/30"
+              >
+                <div class="text-3xl font-bold text-blue-400 mb-2">4+</div>
+                <div class="text-gray-400">Events</div>
+              </div>
+              <div
+                class="text-center p-4 bg-blue-900/20 rounded-lg backdrop-blur-sm border border-blue-400/30"
+              >
+                <div class="text-3xl font-bold text-blue-400 mb-2">2</div>
+                <div class="text-gray-400">Days</div>
+              </div>
+            </div>
+            <div class="grid grid-cols-2 gap-6">
+              <div
+                class="text-center p-4 bg-blue-900/20 rounded-lg backdrop-blur-sm border border-blue-400/30"
+              >
+                <div class="text-3xl font-bold text-blue-400 mb-2">100+</div>
+                <div class="text-gray-400">Participants</div>
+              </div>
+              <div
+                class="text-center p-4 bg-blue-900/20 rounded-lg backdrop-blur-sm border border-blue-400/30"
+              >
+                <div class="text-3xl font-bold text-blue-400 mb-2">₹10K+</div>
+                <div class="text-gray-400">Prizes</div>
+              </div>
+            </div>
           </div>
           <div class="relative">
             <div
               class="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-lg blur-2xl"
             ></div>
             <div
-              class="relative bg-gray-800 p-8 rounded-lg border border-gray-700"
+              class="relative bg-blue-900/20 p-8 rounded-lg backdrop-blur-sm border border-blue-400/30"
             >
-              <div class="grid grid-cols-2 gap-6">
-                <div class="text-center">
-                  <div class="text-4xl font-bold text-blue-400 mb-2">4+</div>
-                  <div class="text-gray-400">Events</div>
-                </div>
-                <div class="text-center">
-                  <div class="text-4xl font-bold text-blue-400 mb-2">2</div>
-                  <div class="text-gray-400">Days</div>
-                </div>
-                <div class="text-center">
-                  <div class="text-4xl font-bold text-blue-400 mb-2">₹50K+</div>
-                  <div class="text-gray-400">Prizes</div>
-                </div>
-                <div class="text-center">
-                  <div class="text-4xl font-bold text-blue-400 mb-2">500+</div>
-                  <div class="text-gray-400">Participants</div>
-                </div>
-              </div>
+              <h3 class="text-xl font-bold mb-6">What Awaits You</h3>
+              <ul class="space-y-4">
+                <li class="flex items-start">
+                  <i class="fas fa-rocket text-blue-400 mt-1 mr-3"></i>
+                  <span
+                    >Develop innovative solutions to real-world challenges</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-users text-blue-400 mt-1 mr-3"></i>
+                  <span
+                    >Connect with fellow innovators and industry experts</span
+                  >
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-lightbulb text-blue-400 mt-1 mr-3"></i>
+                  <span>Transform your ideas into working prototypes</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-trophy text-blue-400 mt-1 mr-3"></i>
+                  <span>Compete for exciting prizes and recognition</span>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
